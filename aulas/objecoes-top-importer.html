@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Objeções TOP IMPORTER</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+:root{
+  --paper:#E9EDF4;
+  --surface:#FFFFFF;
+  --surface-2:#F3F6FA;
+  --ink:#0F1826;
+  --ink-2:#3B4859;
+  --ink-3:#69768B;
+  --line:#D2D9E4;
+  --line-2:#BCC6D4;
+  --friction:#B14119;
+  --friction-soft:#FAE9E1;
+  --friction-line:#E8C4B2;
+  --resolve:#0A6A5A;
+  --resolve-soft:#E1F0EC;
+  --resolve-line:#B6D9D0;
+  --gold:#7E6115;
+  --shadow:0 1px 2px rgba(15,24,38,.05), 0 12px 28px -18px rgba(15,24,38,.30);
+  --f-display:'Archivo','Helvetica Neue',Arial,sans-serif;
+  --f-body:'IBM Plex Sans',system-ui,-apple-system,sans-serif;
+  --f-mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0B111A;
+    --surface:#131B27;
+    --surface-2:#18222F;
+    --ink:#E8EEF7;
+    --ink-2:#AEBACB;
+    --ink-3:#7B8AA0;
+    --line:#25303F;
+    --line-2:#35424F;
+    --friction:#F0906A;
+    --friction-soft:#2B1A12;
+    --friction-line:#4A2C1E;
+    --resolve:#54C3AA;
+    --resolve-soft:#0F2521;
+    --resolve-line:#1E4238;
+    --gold:#D6B45F;
+    --shadow:0 1px 2px rgba(0,0,0,.35), 0 14px 30px -20px rgba(0,0,0,.75);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0B111A;
+  --surface:#131B27;
+  --surface-2:#18222F;
+  --ink:#E8EEF7;
+  --ink-2:#AEBACB;
+  --ink-3:#7B8AA0;
+  --line:#25303F;
+  --line-2:#35424F;
+  --friction:#F0906A;
+  --friction-soft:#2B1A12;
+  --friction-line:#4A2C1E;
+  --resolve:#54C3AA;
+  --resolve-soft:#0F2521;
+  --resolve-line:#1E4238;
+  --gold:#D6B45F;
+  --shadow:0 1px 2px rgba(0,0,0,.35), 0 14px 30px -20px rgba(0,0,0,.75);
+}
+
+*,*::before,*::after{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--f-body);
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:var(--f-display);text-wrap:balance;margin:0;}
+p{margin:0;}
+ul,ol{margin:0;padding:0;}
+strong{font-weight:600;color:var(--ink);}
+em{font-style:italic;}
+a{color:inherit;}
+:focus-visible{outline:2px solid var(--resolve);outline-offset:3px;border-radius:3px;}
+
+.wrap{max-width:920px;margin:0 auto;padding:0 22px 96px;}
+.prose{max-width:64ch;}
+
+/* ---------- cover ---------- */
+.cover{padding:64px 0 40px;border-bottom:1px solid var(--line);}
+.eyebrow{
+  font-family:var(--f-mono);font-size:.7rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:.17em;color:var(--ink-3);
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--friction);flex:none;}
+h1{
+  font-size:clamp(2.7rem,8.5vw,4.6rem);font-weight:800;letter-spacing:-.035em;
+  line-height:.94;margin:22px 0 0;
+}
+h1 .soft{color:var(--ink-3);display:block;font-size:.42em;font-weight:600;letter-spacing:-.01em;line-height:1.2;margin-bottom:.55em;}
+.lede{font-size:1.2rem;line-height:1.55;color:var(--ink-2);max-width:56ch;margin-top:26px;}
+.lede b{color:var(--ink);font-weight:600;}
+.meta{
+  display:flex;flex-wrap:wrap;gap:8px 10px;margin-top:30px;
+  font-family:var(--f-mono);font-size:.72rem;letter-spacing:.04em;color:var(--ink-3);
+}
+.meta span{border:1px solid var(--line);border-radius:999px;padding:5px 12px;background:var(--surface);}
+
+/* index bubbles */
+.index{margin-top:36px;}
+.index-title{font-family:var(--f-mono);font-size:.7rem;font-weight:600;letter-spacing:.17em;text-transform:uppercase;color:var(--ink-3);}
+.index-list{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px;padding:0;list-style:none;}
+.index-list a{
+  display:inline-block;text-decoration:none;background:var(--surface);
+  border:1px solid var(--line);border-radius:14px 14px 14px 4px;
+  padding:9px 15px;font-size:.95rem;color:var(--ink-2);
+  transition:border-color .18s ease, color .18s ease, transform .18s ease;
+}
+.index-list a:hover{border-color:var(--friction);color:var(--ink);transform:translateY(-1px);}
+
+/* ---------- sections ---------- */
+section{padding:56px 0 0;}
+.kicker{
+  font-family:var(--f-mono);font-size:.7rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:.17em;color:var(--friction);
+}
+h2{font-size:clamp(1.75rem,4.4vw,2.45rem);font-weight:700;letter-spacing:-.025em;line-height:1.1;margin:12px 0 0;}
+.sub{color:var(--ink-2);margin-top:14px;max-width:62ch;}
+h3{font-size:1.12rem;font-weight:700;letter-spacing:-.01em;margin:0;}
+
+.stack{display:flex;flex-direction:column;gap:18px;margin-top:28px;}
+.stack-lg{gap:28px;}
+
+/* ---------- generic blocks ---------- */
+.card{
+  background:var(--surface);border:1px solid var(--line);
+  border-radius:14px;padding:24px;box-shadow:var(--shadow);
+}
+.quote{
+  font-family:var(--f-display);font-size:clamp(1.25rem,3.2vw,1.6rem);font-weight:600;
+  line-height:1.3;letter-spacing:-.015em;
+  border-left:3px solid var(--friction);padding:4px 0 4px 22px;margin-top:28px;
+  max-width:52ch;
+}
+.callout{
+  border-left:3px solid var(--resolve);background:var(--resolve-soft);
+  padding:18px 22px;border-radius:0 10px 10px 0;
+}
+.callout.warn{border-left-color:var(--friction);background:var(--friction-soft);}
+.callout .tag{
+  font-family:var(--f-mono);font-size:.68rem;font-weight:600;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--resolve);display:block;margin-bottom:6px;
+}
+.callout.warn .tag{color:var(--friction);}
+
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:16px;margin-top:28px;}
+
+/* truth list */
+.truths{display:flex;flex-direction:column;gap:20px;margin-top:28px;list-style:none;}
+.truths li{padding-left:26px;position:relative;max-width:64ch;}
+.truths li::before{
+  content:"";position:absolute;left:0;top:.62em;width:11px;height:11px;
+  border:2px solid var(--friction);border-radius:50%;
+}
+.truths b{display:block;font-family:var(--f-display);font-size:1.08rem;font-weight:700;letter-spacing:-.01em;margin-bottom:2px;}
+
+/* translation table */
+.trans{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface);margin-top:28px;}
+.trans-head,.trans-row{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+.trans-head > div{
+  font-family:var(--f-mono);font-size:.66rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  padding:12px 18px;color:var(--ink-3);background:var(--surface-2);border-bottom:1px solid var(--line);
+}
+.trans-head > div:first-child{border-right:1px solid var(--line);}
+.trans-row > div{padding:14px 18px;border-bottom:1px solid var(--line);font-size:.98rem;}
+.trans-row > div:first-child{border-right:1px solid var(--line);color:var(--friction);font-weight:500;}
+.trans-row > div:last-child{color:var(--ink-2);}
+.trans-row:last-child > div{border-bottom:0;}
+
+/* equation */
+.equation{
+  margin-top:28px;padding:26px 24px;border:1px dashed var(--line-2);border-radius:14px;
+  text-align:center;background:var(--surface);
+}
+.equation .eq{font-family:var(--f-display);font-size:clamp(1.05rem,3.4vw,1.5rem);font-weight:700;letter-spacing:-.02em;line-height:1.35;}
+.equation .eq .up{color:var(--resolve);}
+.equation .eq .down{color:var(--friction);}
+.equation .note{font-size:.95rem;color:var(--ink-2);margin-top:12px;max-width:52ch;margin-left:auto;margin-right:auto;}
+
+/* roots */
+.root{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:12px;}
+.root-top{display:flex;align-items:baseline;gap:10px;}
+.root-n{font-family:var(--f-mono);font-size:.72rem;font-weight:600;color:var(--ink-3);letter-spacing:.1em;}
+.root h3{font-size:1.18rem;}
+.root p{font-size:.97rem;color:var(--ink-2);}
+.root .says{list-style:none;display:flex;flex-direction:column;gap:5px;}
+.root .says li{
+  font-size:.93rem;color:var(--friction);font-style:italic;
+  padding-left:14px;position:relative;
+}
+.root .says li::before{content:"“";position:absolute;left:0;top:.05em;font-family:var(--f-display);font-size:1.1em;}
+.root .anti{margin-top:auto;
+  border-top:1px solid var(--line);padding-top:12px;font-size:.94rem;color:var(--ink-2);
+}
+.root .anti b{color:var(--resolve);font-weight:600;}
+
+/* funnel */
+.funnel{margin-top:30px;position:relative;padding-left:8px;}
+.stage{display:grid;grid-template-columns:44px 1fr;gap:18px;position:relative;padding-bottom:26px;}
+.stage:last-child{padding-bottom:0;}
+.stage::before{
+  content:"";position:absolute;left:21px;top:34px;bottom:-4px;width:2px;background:var(--line);
+}
+.stage:last-child::before{display:none;}
+.stage-n{
+  width:44px;height:44px;border-radius:50%;border:1px solid var(--line-2);background:var(--surface);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--f-mono);font-size:.85rem;font-weight:600;color:var(--ink-3);z-index:1;
+}
+.stage.hot .stage-n{border-color:var(--friction);color:var(--friction);background:var(--friction-soft);}
+.stage-body{padding-top:8px;}
+.stage-body h3{font-size:1.06rem;}
+.stage-hear{margin-top:8px;font-size:.96rem;color:var(--friction);font-style:italic;}
+.stage-miss{margin-top:5px;font-size:.94rem;color:var(--ink-2);}
+.stage-miss b{font-family:var(--f-mono);font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);font-style:normal;}
+
+/* P.A.R.E. */
+.pare{display:flex;flex-direction:column;gap:0;margin-top:30px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--surface);}
+.pare-step{display:grid;grid-template-columns:76px 1fr;border-bottom:1px solid var(--line);}
+.pare-step:last-child{border-bottom:0;}
+.pare-letter{
+  background:var(--surface-2);border-right:1px solid var(--line);
+  display:flex;align-items:flex-start;justify-content:center;padding-top:24px;
+  font-family:var(--f-display);font-size:2.4rem;font-weight:800;letter-spacing:-.04em;color:var(--friction);
+}
+.pare-content{padding:22px 24px;display:flex;flex-direction:column;gap:12px;}
+.pare-content h3{font-size:1.14rem;}
+.pare-content p{font-size:.98rem;color:var(--ink-2);}
+.pare-trap{font-size:.93rem;color:var(--ink-2);border-top:1px dashed var(--line-2);padding-top:11px;}
+.pare-trap b{font-family:var(--f-mono);font-size:.67rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--friction);display:block;margin-bottom:3px;}
+
+/* chat bubbles */
+.chat{display:flex;flex-direction:column;gap:12px;}
+.bubble{
+  position:relative;max-width:92%;padding:12px 16px;font-size:.99rem;line-height:1.5;
+  border:1px solid var(--line);background:var(--surface-2);border-radius:14px 14px 14px 4px;
+  align-self:flex-start;color:var(--ink);
+}
+.bubble::before{
+  content:"Cliente";position:absolute;top:-9px;left:14px;
+  font-family:var(--f-mono);font-size:.6rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);background:var(--surface);padding:0 6px;border-radius:3px;
+}
+.bubble--out{
+  background:var(--resolve-soft);border-color:var(--resolve-line);
+  border-radius:14px 14px 4px 14px;align-self:flex-end;
+}
+.bubble--out::before{content:"Você";left:auto;right:14px;color:var(--resolve);background:var(--surface);}
+.card .bubble::before{background:var(--surface);}
+
+/* objection cards */
+.obj{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);scroll-margin-top:20px;}
+.obj-head{padding:22px 24px 20px;border-bottom:1px solid var(--line);background:var(--surface-2);}
+.obj-tags{display:flex;flex-wrap:wrap;align-items:center;gap:9px;}
+.obj-n{font-family:var(--f-mono);font-size:.72rem;font-weight:600;letter-spacing:.12em;color:var(--ink-3);}
+.chip{
+  font-family:var(--f-mono);font-size:.63rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;
+  padding:4px 9px;border-radius:999px;border:1px solid var(--friction-line);
+  color:var(--friction);background:var(--friction-soft);
+}
+.obj-head h3{
+  font-family:var(--f-display);font-size:clamp(1.3rem,3.6vw,1.75rem);font-weight:700;
+  letter-spacing:-.02em;line-height:1.2;margin-top:12px;
+}
+.obj-body{padding:24px;display:flex;flex-direction:column;gap:22px;}
+.block-label{
+  font-family:var(--f-mono);font-size:.67rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--ink-3);margin-bottom:9px;
+}
+.obj-body p{font-size:.99rem;color:var(--ink-2);max-width:62ch;}
+.obj-body p b{color:var(--ink);}
+.case{
+  border-left:3px solid var(--line-2);padding:2px 0 2px 16px;
+  font-size:.94rem;color:var(--ink-2);font-style:italic;
+}
+.case b{font-family:var(--f-mono);font-size:.66rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);font-style:normal;display:block;margin-bottom:4px;}
+.mistake{border-left:3px solid var(--friction);background:var(--friction-soft);padding:14px 18px;border-radius:0 10px 10px 0;font-size:.96rem;color:var(--ink-2);}
+.mistake b{font-family:var(--f-mono);font-size:.66rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--friction);display:block;margin-bottom:5px;}
+.steps{list-style:none;counter-reset:s;display:flex;flex-direction:column;gap:15px;}
+.steps > li{counter-increment:s;position:relative;padding-left:34px;font-size:.99rem;color:var(--ink-2);max-width:62ch;}
+.steps > li::before{
+  content:counter(s);position:absolute;left:0;top:1px;
+  width:23px;height:23px;border-radius:50%;background:var(--resolve-soft);border:1px solid var(--resolve-line);
+  color:var(--resolve);font-family:var(--f-mono);font-size:.72rem;font-weight:600;
+  display:flex;align-items:center;justify-content:center;
+}
+.steps > li b{color:var(--ink);}
+.steps .chat{margin-top:10px;}
+
+/* checklist */
+.checklist{list-style:none;counter-reset:c;display:flex;flex-direction:column;gap:0;margin-top:28px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface);}
+.checklist li{
+  counter-increment:c;display:grid;grid-template-columns:52px 1fr;gap:0;
+  border-bottom:1px solid var(--line);
+}
+.checklist li:last-child{border-bottom:0;}
+.checklist li::before{
+  content:counter(c,decimal-leading-zero);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--f-mono);font-size:.75rem;font-weight:600;color:var(--ink-3);
+  background:var(--surface-2);border-right:1px solid var(--line);
+}
+.checklist .q{padding:16px 20px;}
+.checklist .q .ask{font-size:1.02rem;color:var(--ink);font-weight:500;}
+.checklist .q .why{font-family:var(--f-mono);font-size:.67rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--resolve);margin-top:6px;}
+.checklist li.key{background:var(--resolve-soft);}
+.checklist li.key::before{background:var(--resolve-soft);color:var(--resolve);}
+
+/* errors */
+.errors{list-style:none;display:flex;flex-direction:column;gap:12px;margin-top:28px;}
+.errors li{
+  display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start;
+  font-size:1rem;color:var(--ink-2);max-width:64ch;
+}
+.errors li::before{
+  content:"✕";color:var(--friction);font-family:var(--f-mono);font-size:.82rem;font-weight:600;
+  line-height:1.6;
+}
+.errors li b{color:var(--ink);font-weight:600;}
+
+/* cheat sheet */
+.tablewrap{overflow-x:auto;margin-top:28px;border:1px solid var(--line);border-radius:14px;background:var(--surface);}
+table{border-collapse:collapse;width:100%;min-width:520px;}
+th{
+  font-family:var(--f-mono);font-size:.66rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);text-align:left;padding:13px 18px;background:var(--surface-2);
+  border-bottom:1px solid var(--line);
+}
+td{padding:14px 18px;border-bottom:1px solid var(--line);font-size:.96rem;vertical-align:top;}
+tr:last-child td{border-bottom:0;}
+td:first-child{color:var(--friction);font-style:italic;width:38%;}
+td:last-child{color:var(--ink-2);}
+
+/* training */
+.drill{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:10px;}
+.drill .num{font-family:var(--f-mono);font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--resolve);}
+.drill p{font-size:.97rem;color:var(--ink-2);}
+
+/* closer */
+.closer{margin-top:64px;padding:48px 0 0;border-top:1px solid var(--line);}
+.closer p{
+  font-family:var(--f-display);font-size:clamp(1.5rem,4.6vw,2.3rem);font-weight:700;
+  letter-spacing:-.025em;line-height:1.2;max-width:20ch;
+}
+.closer p .hl{color:var(--friction);}
+footer{
+  margin-top:44px;padding-top:22px;border-top:1px solid var(--line);
+  font-family:var(--f-mono);font-size:.7rem;letter-spacing:.05em;color:var(--ink-3);line-height:1.8;
+}
+
+@media (max-width:560px){
+  body{font-size:16px;}
+  .wrap{padding:0 16px 72px;}
+  .cover{padding:44px 0 32px;}
+  .trans-head,.trans-row{grid-template-columns:1fr;}
+  .trans-head > div:first-child,.trans-row > div:first-child{border-right:0;}
+  .trans-row > div:first-child{border-bottom:0;padding-bottom:2px;}
+  .pare-step{grid-template-columns:1fr;}
+  .pare-letter{border-right:0;border-bottom:1px solid var(--line);padding:12px 0 10px;font-size:1.9rem;}
+  .stage{grid-template-columns:36px 1fr;gap:14px;}
+  .stage-n{width:36px;height:36px;font-size:.78rem;}
+  .stage::before{left:17px;top:28px;}
+  .bubble{max-width:100%;}
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation:none!important;transition:none!important;}
+}
+
+@media print{
+  body{background:#fff;color:#000;font-size:11pt;}
+  .card,.obj,.pare,.checklist,.tablewrap,.root,.drill{box-shadow:none;break-inside:avoid;}
+  .index{display:none;}
+  section{padding-top:28px;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="cover">
+  <p class="eyebrow">Treinamento comercial · TOP IMPORTER</p>
+  <h1><span class="soft">Aula 01</span>Quebra de objeções</h1>
+  <p class="lede">A objeção não é o fim da venda. <b>É o ponto em que a venda de verdade começa</b> — e é exatamente ali que o dia do time é ganho ou perdido.</p>
+  <div class="meta">
+    <span>Base: relatos de fechamento do grupo</span>
+    <span>6 objeções reais da loja</span>
+    <span>Método P.A.R.E.</span>
+    <span>Leitura: ~15 min</span>
+  </div>
+
+  <nav class="index" aria-label="Objeções da aula">
+    <p class="index-title">As objeções que apareceram essa semana</p>
+    <ul class="index-list">
+      <li><a href="#obj-1">“Vou esperar receber”</a></li>
+      <li><a href="#obj-2">“Não conheço a marca”</a></li>
+      <li><a href="#obj-3">“Só quero esse aparelho”</a></li>
+      <li><a href="#obj-4">O acompanhante</a></li>
+      <li><a href="#obj-5">O silêncio pós-proposta</a></li>
+      <li><a href="#obj-6">“Amanhã eu te retorno”</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ============ 1. CONCEITO ============ -->
+<section id="conceito">
+  <p class="kicker">Conceito</p>
+  <h2>O que é uma objeção</h2>
+
+  <p class="quote">Objeção é qualquer barreira — dita ou não dita — que o cliente coloca entre ele e a decisão de comprar.</p>
+
+  <p class="sub">Repare em “não dita”. Nem toda objeção vem em forma de frase. Às vezes ela vem como um “vou pensar”, um olhar pro acompanhante, ou um visualizado às 19h que nunca virou resposta.</p>
+
+  <ul class="truths">
+    <li><b>Objeção não é “não”.</b> “Não” é o cliente indo embora. Objeção é o cliente ficando e te pedindo mais motivo pra dizer sim. Quem já decidiu não comprar não discute entrada, não pergunta de parcela, não compara marca — só agradece e sai.</li>
+    <li><b>Objeção é termômetro de interesse.</b> Quanto mais específica a objeção, mais perto da compra o cliente está. “Tá caro” é vago. “A entrada é que tá apertada esse mês” é praticamente um pedido de ajuda pra comprar.</li>
+    <li><b>Objeção quase nunca é sobre o que ela diz ser.</b> A frase é a superfície. Embaixo dela existe sempre uma insegurança que o cliente não vai falar em voz alta — porque ninguém gosta de admitir que está com medo de errar ou que o dinheiro está curto.</li>
+  </ul>
+
+  <div class="trans">
+    <div class="trans-head">
+      <div>O cliente diz</div>
+      <div>O cliente quer dizer</div>
+    </div>
+    <div class="trans-row"><div>“Vou pensar.”</div><div>Não tenho motivo pra decidir isso hoje.</div></div>
+    <div class="trans-row"><div>“Tá caro.”</div><div>Ainda não entendi por que vale esse valor.</div></div>
+    <div class="trans-row"><div>“Não conheço essa marca.”</div><div>Não confio ainda — e tenho medo de perder meu dinheiro.</div></div>
+    <div class="trans-row"><div>“Vou esperar receber.”</div><div>Não vi urgência que justifique eu me esforçar agora.</div></div>
+    <div class="trans-row"><div>“Vou falar com ele/ela.”</div><div>A decisão não é só minha e você não falou com quem decide.</div></div>
+    <div class="trans-row"><div>(silêncio, visualizado)</div><div>Alguma coisa travou e eu não vou te contar o quê.</div></div>
+  </div>
+
+  <div class="equation">
+    <p class="eq"><span class="up">VALOR</span> &nbsp;&gt;&nbsp; <span class="down">PREÇO + RISCO + ESFORÇO</span></p>
+    <p class="note">A compra acontece quando esse lado esquerdo é maior. Toda objeção é o cliente avisando que um dos três da direita cresceu — ou que o valor da esquerda nunca foi construído.</p>
+  </div>
+</section>
+
+<!-- ============ 2. RAÍZES ============ -->
+<section id="raizes">
+  <p class="kicker">Por que elas surgem</p>
+  <h2>As 4 raízes de toda objeção</h2>
+  <p class="sub">Existem centenas de frases diferentes, mas só quatro motivos. Identificar a raiz é o que separa <em>responder</em> uma objeção de <em>quebrar</em> uma objeção. Responder é falar por cima. Quebrar é tirar a barreira do lugar.</p>
+
+  <div class="grid-2">
+    <article class="root">
+      <div class="root-top"><span class="root-n">01</span><h3>Falta de confiança</h3></div>
+      <p>Ele não confia — na marca, na loja, na financeira ou em você. É a raiz mais comum com cliente novo e com produto importado.</p>
+      <ul class="says">
+        <li>“Não conheço essa marca.”</li>
+        <li>“É original mesmo?”</li>
+        <li>“E se der problema, como fica?”</li>
+      </ul>
+      <p class="anti"><b>Antídoto: prova.</b> Garantia, nota fiscal, procedência, aparelho na mão do cliente, comparação com marca conhecida, caso de outro cliente da loja.</p>
+    </article>
+
+    <article class="root">
+      <div class="root-top"><span class="root-n">02</span><h3>Falta de valor</h3></div>
+      <p>O preço já existe na cabeça dele; o valor ainda não. Sempre que você fala de número antes de falar da dor, essa raiz aparece.</p>
+      <ul class="says">
+        <li>“Tá caro.”</li>
+        <li>“Vi mais barato em outro lugar.”</li>
+        <li>“Por esse valor eu levo outro.”</li>
+      </ul>
+      <p class="anti"><b>Antídoto: diagnóstico.</b> Amarrar cada característica do aparelho a uma dor que o próprio cliente te contou. Valor não se argumenta — se constrói com pergunta.</p>
+    </article>
+
+    <article class="root">
+      <div class="root-top"><span class="root-n">03</span><h3>Falta de urgência</h3></div>
+      <p>Faz sentido, ele até quer — só não hoje. É a raiz que mais engana o vendedor, porque o cliente sai sorrindo e você acha que a venda está viva.</p>
+      <ul class="says">
+        <li>“Vou esperar receber.”</li>
+        <li>“Mês que vem eu volto.”</li>
+        <li>“Depois eu te chamo.”</li>
+      </ul>
+      <p class="anti"><b>Antídoto: custo de esperar + condição de hoje.</b> Mostrar o que ele perde adiando, e nunca deixar sair sem data e hora do próximo contato.</p>
+    </article>
+
+    <article class="root">
+      <div class="root-top"><span class="root-n">04</span><h3>Falta de autoridade</h3></div>
+      <p>Não é ele — ou não é só ele — quem decide. Você fez um atendimento perfeito para a pessoa errada, ou para metade das pessoas certas.</p>
+      <ul class="says">
+        <li>“Vou falar com meu marido.”</li>
+        <li>“Vou ver com minha mãe.”</li>
+        <li>(o acompanhante começa a somar o valor final)</li>
+      </ul>
+      <p class="anti"><b>Antídoto: descobrir o decisor antes da proposta.</b> Se tem duas pessoas na mesa, tem dois clientes. Venda para os dois.</p>
+    </article>
+  </div>
+
+  <div class="stack">
+    <div class="callout warn">
+      <span class="tag">A raiz que mora dentro das outras quatro</span>
+      <p><strong>Medo de errar.</strong> Ninguém quer se arrepender de um compromisso de 12 ou 24 meses. Toda vez que você reduz o risco percebido — garantia dita em voz alta, condição transparente, valor total falado sem rodeio — você derruba objeção sem nem precisar argumentar.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. FUNIL ============ -->
+<section id="funil">
+  <p class="kicker">Funil de vendas</p>
+  <h2>Onde a objeção mora</h2>
+  <p class="sub">A objeção <strong>aparece</strong> no fim do atendimento, mas quase nunca <strong>nasce</strong> lá. Ela nasce numa etapa que foi pulada ou feita pela metade — e só cobra a conta na hora do fechamento. Por isso adianta pouco decorar resposta: se você sempre trava no mesmo ponto, o problema está uma etapa antes.</p>
+
+  <div class="funnel">
+    <div class="stage">
+      <div class="stage-n">01</div>
+      <div class="stage-body">
+        <h3>Atração</h3>
+        <p class="stage-hear">Cliente chega: loja, Instagram, indicação, recorrente.</p>
+        <p class="stage-miss"><b>Trava aqui quando</b> o contato entra e demora pra ser atendido. Lead frio não é lead perdido — lead esquecido é.</p>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="stage-n">02</div>
+      <div class="stage-body">
+        <h3>Abordagem e conexão</h3>
+        <p class="stage-hear">“Só tô dando uma olhadinha.”</p>
+        <p class="stage-miss"><b>O que faltou</b> confiança. Essa não é objeção de produto, é objeção de pessoa: ele ainda não decidiu se conversa com você.</p>
+      </div>
+    </div>
+    <div class="stage hot">
+      <div class="stage-n">03</div>
+      <div class="stage-body">
+        <h3>Diagnóstico</h3>
+        <p class="stage-hear">Aqui é onde 90% das objeções do fim do atendimento são plantadas.</p>
+        <p class="stage-miss"><b>O que se descobre aqui</b> a dor, o uso, quanto cabe por mês, se tem entrada e quem decide. Pular qualquer um desses quatro é escolher qual objeção você vai ouvir depois.</p>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="stage-n">04</div>
+      <div class="stage-body">
+        <h3>Simulação e pré-aprovação</h3>
+        <p class="stage-hear">“Mas eu só quero aquele aparelho ali.”</p>
+        <p class="stage-miss"><b>O que faltou</b> alinhar a faixa de valor <em>antes</em> de deixar o cliente se apaixonar por um modelo fora do limite dele.</p>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="stage-n">05</div>
+      <div class="stage-body">
+        <h3>Proposta</h3>
+        <p class="stage-hear">“Tá caro.” / “Vou pensar.” / (visualizou e sumiu)</p>
+        <p class="stage-miss"><b>O que faltou</b> valor. Você apresentou preço para alguém que ainda não sabia o que estava comprando.</p>
+      </div>
+    </div>
+    <div class="stage hot">
+      <div class="stage-n">06</div>
+      <div class="stage-body">
+        <h3>Objeção</h3>
+        <p class="stage-hear">A barreira finalmente aparece — dita ou em forma de silêncio.</p>
+        <p class="stage-miss"><b>O que fazer</b> não improvisar. Aqui entra o método da próxima seção.</p>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="stage-n">07</div>
+      <div class="stage-body">
+        <h3>Fechamento</h3>
+        <p class="stage-hear">“Vou esperar receber.” / “Amanhã eu te retorno.”</p>
+        <p class="stage-miss"><b>O que faltou</b> urgência e decisor — os dois itens do diagnóstico que mais são pulados.</p>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="stage-n">08</div>
+      <div class="stage-body">
+        <h3>Pós-venda</h3>
+        <p class="stage-hear">Entrega, acompanhamento, indicação, recompra.</p>
+        <p class="stage-miss"><b>Por que importa</b> cliente bem atendido volta sem objeção nenhuma. É a única etapa que <em>reduz</em> objeção da próxima venda.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="stack">
+    <div class="callout">
+      <span class="tag">Regra da aula</span>
+      <p><strong>Objeção no fechamento é conta que chegou de uma etapa que você pulou.</strong> Quando a mesma objeção se repete com clientes diferentes, ela parou de ser sobre o cliente. Ela virou um furo no seu processo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. MÉTODO ============ -->
+<section id="metodo">
+  <p class="kicker">Método</p>
+  <h2>Antes de responder, P.A.R.E.</h2>
+  <p class="sub">Quatro movimentos, sempre na mesma ordem. A maioria das vendas se perde porque o vendedor pula direto pro “R” — começa a argumentar antes de escutar e antes de saber se aquilo era mesmo a barreira.</p>
+
+  <div class="pare">
+    <div class="pare-step">
+      <div class="pare-letter">P</div>
+      <div class="pare-content">
+        <h3>Pare e escute até o fim</h3>
+        <p>Deixe o cliente terminar a frase inteira, inclusive a parte depois da vírgula. É quase sempre na segunda metade que aparece a raiz de verdade: <em>“vou esperar receber… porque eu já tô com o cartão apertado esse mês”</em>. Quem interrompe entrega que já tinha a resposta pronta — e resposta pronta soa como empurrão, não como ajuda.</p>
+        <div class="pare-trap"><b>Erro</b> Começar a responder antes do ponto final.</div>
+      </div>
+    </div>
+
+    <div class="pare-step">
+      <div class="pare-letter">A</div>
+      <div class="pare-content">
+        <h3>Acolha e isole</h3>
+        <p>Primeiro valide o sentimento (validar não é concordar com o “não”). Depois isole: descubra se aquilo é a única coisa que separa ele do aparelho.</p>
+        <div class="chat">
+          <p class="bubble">A entrada tá meio salgada pra mim agora.</p>
+          <p class="bubble bubble--out">Entendo, faz total sentido. Deixa eu te perguntar uma coisa: fora a entrada, tem mais alguma coisa te impedindo de sair com o aparelho hoje?</p>
+        </div>
+        <p>Se ele responde “não, é só isso”, ele acabou de te entregar a chave da venda: resolveu a entrada, fechou. Se ele traz outra coisa, a primeira era cortina de fumaça — e você teria gastado dez minutos argumentando o assunto errado.</p>
+        <div class="pare-trap"><b>Erro</b> Sair defendendo o preço sem saber se preço era o problema.</div>
+      </div>
+    </div>
+
+    <div class="pare-step">
+      <div class="pare-letter">R</div>
+      <div class="pare-content">
+        <h3>Reenquadre com argumento e prova</h3>
+        <p>Não discuta, não prove que ele está errado. Traga um ângulo novo somado a uma evidência concreta: garantia, comparação lado a lado, o aparelho na mão dele, um número real.</p>
+        <p><strong>Use pontes, não confronto:</strong> “É justamente por isso que…”, “Que bom que você falou isso, porque…”. E corte a palavra <strong>“mas”</strong> do seu vocabulário de venda — ela apaga tudo que veio antes. Troque por <strong>“e”</strong>: <em>“Entendo o valor, e é por isso que…”</em></p>
+        <div class="pare-trap"><b>Erro</b> Ganhar a discussão e perder a venda.</div>
+      </div>
+    </div>
+
+    <div class="pare-step">
+      <div class="pare-letter">E</div>
+      <div class="pare-content">
+        <h3>Encerre pedindo a venda de novo</h3>
+        <p>Toda quebra de objeção termina com um novo fechamento — nunca com silêncio esperando o cliente se oferecer. Use escolha dirigida em vez de pergunta de sim/não:</p>
+        <div class="chat">
+          <p class="bubble bubble--out">Resolvida a entrada desse jeito, você prefere levar o preto ou o azul?</p>
+        </div>
+        <p>Se ele trouxer outra objeção, ótimo: volta pro P e recomeça. Objeção nova depois de uma quebra bem-feita é sinal de que você está andando pro fechamento, não pra trás.</p>
+        <div class="pare-trap"><b>Erro</b> Quebrar a objeção lindamente e ficar calado esperando.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. CATÁLOGO ============ -->
+<section id="catalogo">
+  <p class="kicker">Catálogo</p>
+  <h2>As 6 objeções reais da TOP</h2>
+  <p class="sub">Todas as seis vieram dos relatos de fechamento de dia do grupo, entre terça e quinta. Não são exemplos de livro: são as barreiras que estão aparecendo no balcão e no WhatsApp de vocês agora.</p>
+
+  <div class="stack stack-lg">
+
+    <!-- 1 -->
+    <article class="obj" id="obj-1">
+      <div class="obj-head">
+        <div class="obj-tags"><span class="obj-n">01</span><span class="chip">Raiz: urgência</span><span class="chip">Dinheiro</span></div>
+        <h3>“Vou esperar receber.”</h3>
+      </div>
+      <div class="obj-body">
+        <div class="case"><b>Caso real do grupo</b> A cliente queria um modelo específico. O valor pré-aprovado veio abaixo do preço do aparelho, então precisava de entrada. Foi explicado como funciona, e mesmo assim ela preferiu esperar.</div>
+
+        <div>
+          <p class="block-label">O que ela está dizendo de verdade</p>
+          <p>Uma de duas coisas: <b>“não tenho o valor da entrada agora”</b> ou <b>“não vi motivo pra me organizar hoje”</b>. São problemas diferentes e têm soluções diferentes — e você não pode adivinhar qual é.</p>
+        </div>
+
+        <div class="mistake"><b>Erro comum</b> Aceitar de primeira e responder “beleza, quando receber me chama”. A venda morre ali: quando o dinheiro cai, ele já tem dono — conta, mercado, escola, outra loja que ligou antes de você.</div>
+
+        <div>
+          <p class="block-label">O que fazer</p>
+          <ol class="steps">
+            <li><b>Descubra o gargalo real.</b>
+              <div class="chat"><p class="bubble bubble--out">Entendi. Só pra eu te ajudar direito: é o valor da entrada que apertou agora, ou é a data do pagamento mesmo?</p></div>
+            </li>
+            <li><b>Fatie a entrada.</b> Parte hoje no pix e o restante no dia do pagamento, entrada no cartão, ou dividida em duas. Antes de tirar o aparelho da mão dele, esgote as formas de ele ficar com o aparelho.</li>
+            <li><b>Trave a condição e reserve.</b> Isso transforma a espera em compromisso.
+              <div class="chat"><p class="bubble bubble--out">Consigo reservar o seu no seu nome e segurar essa condição. Você garante o modelo hoje e acerta a entrada no dia X.</p></div>
+            </li>
+            <li><b>Mostre o custo de esperar.</b> Com R$ X hoje ele já sai com o aparelho e a primeira parcela só cai em [data] — ou seja, ele leva agora e paga depois de receber do mesmo jeito.</li>
+            <li><b>Se realmente não der, agende com data e hora.</b> “Depois a gente vê” é venda perdida com etiqueta de venda viva.
+              <div class="chat"><p class="bubble bubble--out">Show. Dia 5 eu te chamo às 10h com a condição já separada, pode ser?</p></div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </article>
+
+    <!-- 2 -->
+    <article class="obj" id="obj-2">
+      <div class="obj-head">
+        <div class="obj-tags"><span class="obj-n">02</span><span class="chip">Raiz: confiança</span></div>
+        <h3>“Não conheço essa marca.”</h3>
+      </div>
+      <div class="obj-body">
+        <div class="case"><b>Caso real do grupo</b> Dois fechamentos no mesmo dia com essa objeção: os benefícios foram explicados e a marca comparada com as marcas conhecidas, até o cliente sentir confiança. É o roteiro certo — vale repetir para o time inteiro.</div>
+
+        <div>
+          <p class="block-label">O que ele está dizendo de verdade</p>
+          <p>“E se eu me comprometer com 12 parcelas e o aparelho vier ruim?” <b>Não é desprezo pela marca, é medo de errar com o próprio dinheiro.</b> Cliente que pergunta isso quer comprar — só precisa de permissão pra confiar.</p>
+        </div>
+
+        <div class="mistake"><b>Erro comum</b> Defender a marca com adjetivo: “é boa, pode confiar, é ótima”. Defesa sem prova aumenta a desconfiança — soa como vendedor querendo empurrar.</div>
+
+        <div>
+          <p class="block-label">O que fazer</p>
+          <ol class="steps">
+            <li><b>Concorde com o cuidado dele.</b> Você tira o cliente da posição de adversário.
+              <div class="chat"><p class="bubble bubble--out">Você tá certíssimo em perguntar. Eu também não compraria nada sem saber com o que estou lidando.</p></div>
+            </li>
+            <li><b>Compare de frente, item por item.</b> Coloque o modelo conhecido do lado: mesma memória, mesma câmera, mesma bateria — e a diferença de parcela. Comparação vale mais que discurso.</li>
+            <li><b>Entregue prova física.</b> Aparelho na mão dele, testa a câmera agora, mostra a nota fiscal, fala a garantia em voz alta e diz o que acontece se der problema.</li>
+            <li><b>Use prova social verdadeira.</b> O que saiu mais na loja essa semana, o cliente que voltou pra comprar o segundo. <em>Só funciona se for real</em> — prova social inventada volta como cancelamento e queima a loja no boca a boca.</li>
+            <li><b>Feche reduzindo o risco.</b>
+              <div class="chat"><p class="bubble bubble--out">Você sai daqui com garantia e com a nota. Se aparecer qualquer coisa, você fala comigo direto. Fechamos nesse?</p></div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </article>
+
+    <!-- 3 -->
+    <article class="obj" id="obj-3">
+      <div class="obj-head">
+        <div class="obj-tags"><span class="obj-n">03</span><span class="chip">Raiz: valor</span><span class="chip">Limite × desejo</span></div>
+        <h3>“Eu só quero esse aparelho aqui.”</h3>
+      </div>
+      <div class="obj-body">
+        <div class="case"><b>Caso real do grupo</b> O pré-aprovado veio menor que o aparelho desejado, então precisava de entrada. Foi tentada a conversão para outro modelo que não precisaria de entrada — a cliente não quis e a venda não saiu.</div>
+
+        <div>
+          <p class="block-label">O que está acontecendo</p>
+          <p>Ele já se imaginou com <b>aquele</b> aparelho. Nesse ponto, trocar de modelo não é economizar: é sentir que perdeu alguma coisa. <b>Ninguém compra um sentimento de rebaixamento.</b></p>
+        </div>
+
+        <div class="mistake"><b>Erro comum</b> Oferecer o modelo mais barato como substituto logo de cara. O cliente ouve “você não pode pagar o que queria” — e a reação natural é sair da loja para não passar por isso.</div>
+
+        <div>
+          <p class="block-label">O que fazer</p>
+          <ol class="steps">
+            <li><b>Nunca comece pela troca.</b> Comece esgotando como ele fica com o que quer: entrada fatiada, prazo maior, entrada no cartão, incluir outra pessoa no cadastro, somar o aparelho antigo.</li>
+            <li><b>Descubra o que ele quer de fato.</b> Quase sempre não é o modelo, é um atributo dele.
+              <div class="chat"><p class="bubble bubble--out">Me conta: o que te fez escolher esse aqui? Foi a câmera, a memória ou a bateria?</p></div>
+            </li>
+            <li><b>Se for apresentar outro, apresente como troca lateral — nunca como rebaixamento.</b> Ancore no atributo que ele acabou de citar.
+              <div class="chat"><p class="bubble bubble--out">Nesse aqui você fica com a mesma câmera e a mesma memória, e ainda sai sem precisar de entrada. Na prática, o que muda no seu dia a dia é praticamente nada.</p></div>
+            </li>
+            <li><b>Ancore na parcela e no uso, não no preço cheio.</b> O que cabe no mês dele é a régua real da decisão.</li>
+            <li><b>Prevenção (a parte mais importante):</b> alinhe a faixa de valor <b>antes</b> de colocar qualquer aparelho na mão do cliente. Essa objeção quase sempre se resolve por não existir.</li>
+          </ol>
+        </div>
+      </div>
+    </article>
+
+    <!-- 4 -->
+    <article class="obj" id="obj-4">
+      <div class="obj-head">
+        <div class="obj-tags"><span class="obj-n">04</span><span class="chip">Raiz: autoridade</span><span class="chip">Terceiro na mesa</span></div>
+        <h3>O cliente que vem acompanhado</h3>
+      </div>
+      <div class="obj-body">
+        <div class="case"><b>Caso real do grupo</b> Proposta apresentada, dor da cliente identificada, parcela no valor que ela queria por mês. No fim, a pessoa que estava com ela começou a somar o valor final — e a cliente desistiu do aparelho.</div>
+
+        <div>
+          <p class="block-label">O que aconteceu de verdade</p>
+          <p>O atendimento foi feito para uma pessoa quando a decisão era de duas. <b>O acompanhante não foi atendido, então sobrou pra ele o único papel disponível: o de freio.</b> Ele não estava contra a venda — estava tentando ser útil da única forma que você deixou.</p>
+        </div>
+
+        <div class="mistake"><b>Erro comum</b> Falar só com quem vai assinar e tratar o acompanhante como plateia. Quem é ignorado durante uma hora cobra a fatura no minuto final.</div>
+
+        <div>
+          <p class="block-label">O que fazer</p>
+          <ol class="steps">
+            <li><b>Inclua desde o primeiro minuto.</b> Pergunte o nome, cumprimente, ofereça a cadeira e a água igual. Dois clientes, não um cliente e um acompanhante.</li>
+            <li><b>Descubra o papel dele.</b> É quem entende de tecnologia, quem vai ajudar a pagar, ou quem dá o conselho emocional? Cada papel precisa de um argumento diferente.</li>
+            <li><b>Dê a ele uma função útil.</b> Quem participa da escolha não sabota a escolha.
+              <div class="chat"><p class="bubble bubble--out">Me ajuda aqui: pro dia a dia dela, você acha que compensa mais a bateria ou a câmera?</p></div>
+            </li>
+            <li><b>Antecipe a conta do valor total.</b> O acompanhante <b>sempre</b> vai multiplicar parcela por prazo. Faça essa conta antes dele, em voz alta, com transparência — quem apresenta o número tira a arma da mão de quem ia usá-la.
+              <div class="chat"><p class="bubble bubble--out">Vou ser transparente com vocês: no total fica R$ X. É financiamento, tem juros como qualquer um. O que a gente precisa ver é se os R$ Y por mês cabem tranquilo e se o aparelho resolve o que ela precisa.</p></div>
+            </li>
+            <li><b>Peça a venda olhando para os dois.</b> Fechamento é para a mesa inteira.</li>
+          </ol>
+        </div>
+      </div>
+    </article>
+
+    <!-- 5 -->
+    <article class="obj" id="obj-5">
+      <div class="obj-head">
+        <div class="obj-tags"><span class="obj-n">05</span><span class="chip">Objeção não verbalizada</span></div>
+        <h3>O silêncio depois da proposta</h3>
+      </div>
+      <div class="obj-body">
+        <div class="case"><b>Casos reais do grupo</b> Um cliente entrou pelo Instagram, o atendimento foi iniciado, a proposta enviada — e não veio resposta. Em outro dia, uma cliente com pré-aprovação recebeu todas as informações, viu a proposta das parcelas, apenas visualizou e não respondeu mais. Venda perdida.</div>
+
+        <div>
+          <p class="block-label">A verdade dura</p>
+          <p><b>Silêncio é objeção.</b> Ele já decidiu alguma coisa e não vai te contar o quê. E a causa quase nunca é o valor em si: é que o cliente ficou <b>sozinho com o número</b>. Sozinho com o número, todo mundo acha caro.</p>
+        </div>
+
+        <div class="mistake"><b>Erro comum</b> Mandar o print da simulação com “ficou assim, qualquer coisa me chama”. Isso entrega a decisão inteira pro cliente e não pede absolutamente nada de volta.</div>
+
+        <div>
+          <p class="block-label">O que fazer</p>
+          <ol class="steps">
+            <li><b>Nunca termine uma proposta sem uma pergunta.</b> A pergunta é o que mantém a conversa viva.
+              <div class="chat">
+                <p class="bubble bubble--out">Ficou em R$ X em 12x. Nesse valor faz sentido pra você, ou prefere que eu tente alongar pra baixar a parcela?</p>
+              </div>
+            </li>
+            <li><b>Mande contexto junto com o número.</b> O que ele ganha, a condição e a pergunta — nessa ordem. Print seco vira preço puro, e preço puro sempre parece alto.</li>
+            <li><b>Combine o próximo passo antes de se ausentar.</b> Almoço, troca de turno, fim de expediente: avise e marque.
+              <div class="chat"><p class="bubble bubble--out">Vou almoçar e volto 14h. Te mando a condição fechada e você me diz sim ou não até as 15h, pode ser?</p></div>
+            </li>
+            <li><b>Faça follow-up que reabre, não que cobra.</b> “E aí, pensou?” é fácil de ignorar. Novidade e pergunta fechada não são.
+              <div class="chat">
+                <p class="bubble bubble--out">Consegui uma condição melhor na entrada, quer ver?</p>
+                <p class="bubble bubble--out">Só pra eu não te incomodar à toa: você desistiu do aparelho ou foi a parcela que não coube?</p>
+              </div>
+              <p style="margin-top:8px">A segunda funciona porque dá permissão pro cliente dizer não — e quem responde “foi a parcela” acabou de te devolver a venda.</p>
+            </li>
+            <li><b>Tenha cadência, não impulso.</b> Mesmo dia (2–3h depois), dia seguinte, +3 dias, +7 dias. Passou disso, ele entra na lista de recompra — não some da sua agenda.</li>
+          </ol>
+        </div>
+      </div>
+    </article>
+
+    <!-- 6 -->
+    <article class="obj" id="obj-6">
+      <div class="obj-head">
+        <div class="obj-tags"><span class="obj-n">06</span><span class="chip">Raiz: urgência</span><span class="chip">Decisão adiada</span></div>
+        <h3>“Amanhã eu te dou um retorno.”</h3>
+      </div>
+      <div class="obj-body">
+        <div class="case"><b>Casos reais do grupo</b> Uma simulação em loja com cliente recorrente que não fechou e deixou o contato para conversar durante a semana; e um cliente que ficou de dar retorno no dia seguinte.</div>
+
+        <div>
+          <p class="block-label">O que significa</p>
+          <p>Ou falta uma informação que ele não te contou, ou <b>ele não tem motivo pra decidir hoje</b>. <b>“Retorno” sem data marcada é “não” com educação</b> — e a maioria dos vendedores agradece e vai embora achando que a venda continua viva.</p>
+        </div>
+
+        <div class="mistake"><b>Erro comum</b> Agradecer, mandar “fico no aguardo” e esperar. Quem espera retorno de cliente trabalha na agenda do cliente — e na agenda do cliente você não é prioridade.</div>
+
+        <div>
+          <p class="block-label">O que fazer</p>
+          <ol class="steps">
+            <li><b>Pergunte o que falta, direto e sem medo.</b>
+              <div class="chat"><p class="bubble bubble--out">Claro, sem problema. Só me diz uma coisa pra eu te ajudar melhor: hoje, o que falta pra ser sim?</p></div>
+            </li>
+            <li><b>Isole com a pergunta hipotética.</b>
+              <div class="chat">
+                <p class="bubble bubble--out">Se fosse pra decidir agora, você levaria?</p>
+                <p class="bubble bubble--out">Então é só a questão da entrada, é isso?</p>
+              </div>
+            </li>
+            <li><b>Marque com data, hora e conteúdo.</b> Diga exatamente o que vai acontecer no próximo contato — isso transforma “retorno” em compromisso.
+              <div class="chat"><p class="bubble bubble--out">Fechado. Amanhã às 11h eu te chamo com a condição já reservada no seu nome.</p></div>
+            </li>
+            <li><b>Dê um motivo real pra ser hoje.</b> Condição válida hoje, última unidade da cor, entrada menor. <em>Só use se for verdade</em> — urgência inventada destrói em dez segundos a confiança que você levou uma hora pra construir.</li>
+          </ol>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============ 6. PREVENÇÃO ============ -->
+<section id="prevencao">
+  <p class="kicker">Prevenção</p>
+  <h2>As perguntas que matam a objeção antes de ela nascer</h2>
+  <p class="sub">A melhor quebra de objeção é a que nunca precisou acontecer. Essas seis perguntas vão antes de qualquer simulação, proposta ou preço — cada uma desarma uma das raízes que você acabou de ver.</p>
+
+  <ol class="checklist">
+    <li><div class="q"><p class="ask">Pra quem é o aparelho e o que te fez querer trocar agora?</p><p class="why">Dor + urgência</p></div></li>
+    <li><div class="q"><p class="ask">O que você mais usa no celular? Câmera, jogos, trabalho, espaço pra foto?</p><p class="why">Constrói valor antes do preço</p></div></li>
+    <li><div class="q"><p class="ask">Quanto cabe por mês pra você, tranquilo, sem apertar?</p><p class="why">Evita a objeção 03 (limite × desejo)</p></div></li>
+    <li><div class="q"><p class="ask">Você tem algum valor pra dar de entrada hoje?</p><p class="why">Evita a objeção 01 (“vou esperar receber”)</p></div></li>
+    <li><div class="q"><p class="ask">A decisão é sua ou tem mais alguém decidindo junto com você?</p><p class="why">Evita a objeção 04 (o acompanhante)</p></div></li>
+    <li class="key"><div class="q"><p class="ask">Se eu conseguir dentro desse valor, você fecha hoje comigo?</p><p class="why">Pré-fechamento — evita a objeção 06</p></div></li>
+  </ol>
+
+  <div class="stack">
+    <div class="callout">
+      <span class="tag">A pergunta mais importante da lista</span>
+      <p><strong>A número 6 transforma a sua proposta em uma promessa dele.</strong> Se o cliente disse “fecho”, qualquer objeção depois vira uma conversa sobre <em>o que mudou</em> — e não uma negociação começando do zero. É a diferença entre “vou pensar” e “você tinha me dito que se coubesse nesse valor a gente fechava; coube. Vamos?”</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. ERROS ============ -->
+<section id="erros">
+  <p class="kicker">Erros</p>
+  <h2>O que mata a venda depois da objeção</h2>
+
+  <ul class="errors">
+    <li>Responder antes de o cliente terminar de falar. A raiz costuma estar na segunda metade da frase.</li>
+    <li>Usar <b>“mas”</b>. Ele apaga tudo que você disse antes. Troque por <b>“e”</b>.</li>
+    <li>Discutir para provar que o cliente está errado. Dá pra ganhar a discussão e perder a venda no mesmo minuto.</li>
+    <li>Falar de preço antes de ter construído valor. Preço sem valor é sempre caro.</li>
+    <li>Mandar proposta sem pergunta no final — e depois chamar o silêncio de “cliente sumiu”.</li>
+    <li>Deixar o cliente sair sem <b>data e hora</b> do próximo contato.</li>
+    <li>Ignorar o acompanhante e depois se surpreender quando ele derruba a venda.</li>
+    <li>Oferecer o modelo mais barato como primeira solução, em vez de a última.</li>
+    <li>Insistir na mesma objeção pela quarta vez. Se ela voltou três vezes, não é objeção — é falta de fit ou falta de verdade. Encerre com respeito, deixe a porta aberta e coloque no follow-up.</li>
+    <li>Prometer o que a loja não entrega só pra fechar hoje. Isso volta como cancelamento e como reputação.</li>
+  </ul>
+</section>
+
+<!-- ============ 8. COLINHA ============ -->
+<section id="colinha">
+  <p class="kicker">Colinha</p>
+  <h2>Frases prontas para o balcão</h2>
+  <p class="sub">Salve essa tabela no celular. Ela não substitui o método — é o método já traduzido em fala.</p>
+
+  <div class="tablewrap">
+    <table>
+      <thead>
+        <tr><th scope="col">Quando o cliente diz</th><th scope="col">Você responde</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>“Só tô olhando.”</td><td>“Fica à vontade! Só pra eu te ajudar melhor: você tá procurando pra você ou pra presentear?”</td></tr>
+        <tr><td>“Tá caro.”</td><td>“Entendo. Caro comparado com o quê? Assim eu consigo te mostrar exatamente o que muda de um pro outro.”</td></tr>
+        <tr><td>“Não conheço a marca.”</td><td>“Você tá certíssimo em perguntar. Deixa eu te mostrar lado a lado com o modelo que você já conhece — e a garantia que vai junto.”</td></tr>
+        <tr><td>“Vou esperar receber.”</td><td>“É a entrada que apertou agora ou é a data mesmo? Porque a entrada eu consigo fatiar pra você.”</td></tr>
+        <tr><td>“Vou pensar.”</td><td>“Claro. Só me diz: hoje, o que falta pra ser sim?”</td></tr>
+        <tr><td>“Vou falar com ela/ele.”</td><td>“Perfeito. Chama ela agora no vídeo comigo? Em dois minutos eu explico direitinho e vocês decidem juntos.”</td></tr>
+        <tr><td>“Amanhã eu te retorno.”</td><td>“Fechado. Amanhã às 11h eu te chamo com a condição já reservada no seu nome, pode ser?”</td></tr>
+        <tr><td>“Só quero aquele aparelho.”</td><td>“Entendo, ele é ótimo mesmo. Deixa eu ver como você fica com ele — o que te chamou atenção nele foi a câmera ou a memória?”</td></tr>
+        <tr><td>(o acompanhante começa a somar)</td><td>“Vou ser transparente: no total fica R$ X, é financiamento e tem juros. O que importa é se os R$ Y por mês cabem e se o aparelho resolve o que ela precisa.”</td></tr>
+        <tr><td>(visualizou e não respondeu)</td><td>“Só pra eu não te incomodar à toa: você desistiu do aparelho ou foi a parcela que não coube?”</td></tr>
+        <tr><td>Depois de quebrar qualquer objeção</td><td>“Resolvido isso, você prefere o preto ou o azul?”</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ 9. TREINO ============ -->
+<section id="treino">
+  <p class="kicker">Treino</p>
+  <h2>O que fazer com essa aula</h2>
+
+  <div class="grid-2">
+    <article class="drill">
+      <p class="num">Exercício em trio</p>
+      <h3>Role-play de 5 minutos</h3>
+      <p>Um vende, um faz o cliente com uma das seis objeções sorteadas, e o terceiro só observa. No fim, o observador diz uma única coisa: <strong>em qual letra do P.A.R.E. o vendedor pulou.</strong> Rodízio até todo mundo passar pelos três papéis.</p>
+    </article>
+
+    <article class="drill">
+      <p class="num">No fechamento do dia</p>
+      <h3>“Objeção do dia” com duas linhas a mais</h3>
+      <p>O formato que o grupo já usa está certo — só acrescentem <strong>qual era a raiz</strong> (confiança, valor, urgência ou autoridade) e <strong>em que etapa do funil ela apareceu</strong>. Em duas semanas dá pra enxergar qual etapa está furada no time inteiro, e não só no atendimento.</p>
+    </article>
+
+    <article class="drill">
+      <p class="num">Meta individual da semana</p>
+      <h3>Uma objeção, até sair natural</h3>
+      <p>Escolha <strong>uma</strong> das seis — de preferência a que mais te derruba — e treine a fala dela até sair sem pensar. Roteiro decorado soa falso; roteiro treinado soa como segurança.</p>
+    </article>
+
+    <article class="drill">
+      <p class="num">Antes de cada proposta</p>
+      <h3>As 6 perguntas, sem pular</h3>
+      <p>Durante uma semana, nenhuma simulação sai sem as seis perguntas de prevenção respondidas. É o teste mais rápido pra provar pra vocês mesmos que a maioria das objeções nasce antes de aparecer.</p>
+    </article>
+  </div>
+</section>
+
+<div class="closer">
+  <p>A venda não morre na objeção. <span class="hl">Ela morre no silêncio depois dela.</span></p>
+</div>
+
+<footer>
+  Material de treinamento comercial — TOP IMPORTER<br>
+  Construído a partir dos relatos de fechamento de dia do grupo (Comercial), de terça a quinta.
+</footer>
+
+</div>
+</body>
+</html>
