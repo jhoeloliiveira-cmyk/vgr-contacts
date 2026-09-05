@@ -1,0 +1,35 @@
+{
+  "notify": "email:jhoeloliiveira@gmail.com",
+  "watches": [
+    {
+      "key": "flight:LGW-LIS:2026-10-18",
+      "kind": "flight",
+      "label": "Londres -> Lisboa, ida",
+      "from": "LGW",
+      "fromAlternates": ["LTN", "STN", "LHR", "LCY", "SEN"],
+      "fromNote": "LGW e a prioridade do usuario. So sugira outro aeroporto se a diferenca compensar o traslado.",
+      "to": "LIS",
+      "date": "2026-10-18",
+      "tripType": "oneway",
+      "adults": 1,
+      "currency": "GBP",
+      "targetPrice": 60,
+      "baggage": "cabine 10kg — some o extra da low cost antes de comparar com BA/TAP",
+      "carriers": ["easyJet", "British Airways", "TAP Air Portugal", "Vueling", "Ryanair"]
+    },
+    {
+      "key": "hotel:London:2026-10-16_18",
+      "kind": "hotel",
+      "label": "Hotel em Londres, 2 noites",
+      "city": "London",
+      "checkin": "2026-10-16",
+      "checkout": "2026-10-18",
+      "nights": 2,
+      "adults": 1,
+      "currency": "GBP",
+      "targetPrice": 200,
+      "targetIs": "total das 2 noites",
+      "areaNote": "Prioriza acesso facil ao Gatwick Express/Thameslink (Victoria, London Bridge, Blackfriars) — checkout dia 18 e o voo sai do LGW no mesmo dia."
+    }
+  ]
+}
