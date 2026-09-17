@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contrato de Serviços Psicológicos</title>
+<meta name="description" content="Modelo de contrato de prestação de serviços psicológicos com lacunas para preenchimento dos dados do paciente.">
+<style>
+  :root{
+    --ink:#161512; --ink-soft:#4a463f; --rule:#c9c3b6; --paper:#ffffff;
+    --accent:#2f5d50; --blank:#8d8678;
+  }
+  @page{ size:A4; margin:20mm 18mm 18mm 20mm; }
+  *{ box-sizing:border-box; }
+  html{ -webkit-text-size-adjust:100%; }
+  body{
+    margin:0; background:#e9e6df; color:var(--ink);
+    font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+    font-size:11.2pt; line-height:1.6;
+  }
+  .folha{
+    max-width:210mm; margin:0 auto; background:var(--paper);
+    padding:22mm 20mm 20mm; box-shadow:0 1px 3px rgba(0,0,0,.14);
+  }
+  header.cabecalho{ text-align:center; border-bottom:1.5px solid var(--ink); padding-bottom:10px; margin-bottom:22px; }
+  header.cabecalho .prof{ font-size:13pt; font-weight:700; letter-spacing:.04em; }
+  header.cabecalho .crp{ font-size:10pt; color:var(--ink-soft); letter-spacing:.06em; text-transform:uppercase; }
+  header.cabecalho .end{ font-size:9.5pt; color:var(--ink-soft); margin-top:3px; }
+  h1{ font-size:14pt; text-align:center; letter-spacing:.06em; text-transform:uppercase; margin:26px 0 4px; }
+  h1 + .sub{ text-align:center; font-size:9.5pt; color:var(--ink-soft); font-style:italic; margin:0 0 22px; }
+  h2{
+    font-size:11pt; text-transform:uppercase; letter-spacing:.06em; margin:22px 0 8px;
+    padding-bottom:3px; border-bottom:1px solid var(--rule); color:var(--accent);
+    page-break-after:avoid; break-after:avoid;
+  }
+  p{ margin:0 0 9px; text-align:justify; }
+  p.recuo{ text-indent:0; }
+  ol.alineas{ margin:0 0 10px; padding-left:24px; }
+  ol.alineas li{ margin-bottom:6px; text-align:justify; }
+  b,strong{ font-weight:700; }
+  .nota{ font-size:9.5pt; font-style:italic; color:var(--ink-soft); }
+  /* lacunas */
+  .l{ display:inline-block; border-bottom:1px solid var(--blank); min-width:60px; }
+  .l1{ width:35mm; } .l2{ width:55mm; } .l3{ width:80mm; } .l4{ width:100%; }
+  .bloco-dados{ margin:0 0 12px; }
+  .bloco-dados .linha{ margin-bottom:11px; }
+  .cx{ font-size:12pt; letter-spacing:.02em; }
+  .destaque{ background:#f4f1e9; border-left:3px solid var(--accent); padding:10px 14px; margin:0 0 12px; }
+  .assinaturas{ margin-top:30px; page-break-inside:avoid; break-inside:avoid; }
+  .firma{ margin:26px 0 0; text-align:center; }
+  .firma .rule{ border-top:1px solid var(--ink); width:75%; margin:0 auto 4px; }
+  .firma .nome{ font-weight:700; }
+  .firma .cargo{ font-size:9.5pt; color:var(--ink-soft); text-transform:uppercase; letter-spacing:.05em; }
+  .firma .campo{ font-size:10pt; margin-top:4px; }
+  .testemunhas{ margin-top:26px; }
+  .rodape-pagina{ margin-top:26px; border-top:1px solid var(--rule); padding-top:6px; font-size:8.5pt; color:var(--ink-soft); text-align:center; }
+  section{ page-break-inside:auto; }
+  @media print{
+    body{ background:#fff; font-size:10.8pt; }
+    .folha{ box-shadow:none; padding:0; max-width:none; }
+    .no-print{ display:none !important; }
+  }
+  @media (max-width:640px){
+    .folha{ padding:16px; }
+    body{ font-size:12px; line-height:1.55; }
+    .l1,.l2,.l3{ width:auto; min-width:40%; }
+  }
+</style>
+</head>
+<body>
+<div class="folha">
+
+  <header class="cabecalho">
+    <div class="prof">JARDEL EMERSON DA SILVA LINS</div>
+    <div class="crp">Psicólogo &middot; CRP 02/32710</div>
+    <div class="end">Rua Vicente Barbosa, nº 117 — São Pedro — Belo Jardim/PE<br>
+      Telefone/WhatsApp: (<span class="l" style="width:14mm"></span>) <span class="l l1"></span> &nbsp;·&nbsp;
+      E-mail: <span class="l l2"></span></div>
+  </header>
+
+  <h1>Contrato de Prestação de Serviços Psicológicos</h1>
+  <p class="sub">Modelo — preencher as lacunas antes da assinatura</p>
+
+  <section>
+    <h2>I — Das Partes</h2>
+
+    <p><strong>CONTRATADO (PSICÓLOGO):</strong> <strong>JARDEL EMERSON DA SILVA LINS</strong>,
+    psicólogo regularmente inscrito no Conselho Regional de Psicologia sob o
+    <strong>CRP 02/32710</strong>, inscrito no CPF sob o nº <span class="l l2"></span>,
+    com consultório situado à <strong>Rua Vicente Barbosa, nº 117, Bairro São Pedro,
+    Belo Jardim/PE</strong>, CEP <span class="l l1"></span>.</p>
+
+    <p><strong>CONTRATANTE (PACIENTE):</strong></p>
+    <div class="bloco-dados">
+      <div class="linha">Nome completo: <span class="l" style="width:75%"></span></div>
+      <div class="linha">Nacionalidade: <span class="l l1"></span> &nbsp; Estado civil: <span class="l l1"></span></div>
+      <div class="linha">Profissão: <span class="l l2"></span> &nbsp; Data de nascimento: <span class="l" style="width:32mm"></span></div>
+      <div class="linha">RG nº <span class="l l1"></span> &nbsp; Órgão emissor: <span class="l" style="width:25mm"></span> &nbsp; CPF nº <span class="l l1"></span></div>
+      <div class="linha">Endereço: <span class="l" style="width:66%"></span> nº <span class="l" style="width:18mm"></span></div>
+      <div class="linha">Complemento: <span class="l l1"></span> &nbsp; Bairro: <span class="l l2"></span></div>
+      <div class="linha">Cidade/UF: <span class="l l2"></span> &nbsp; CEP: <span class="l l1"></span></div>
+      <div class="linha">Telefone/WhatsApp: <span class="l l2"></span> &nbsp; E-mail: <span class="l l2"></span></div>
+      <div class="linha">Contato de emergência (nome e telefone): <span class="l" style="width:55%"></span></div>
+    </div>
+
+    <p class="nota">Preencher o quadro abaixo somente quando o paciente for menor de 18 anos,
+    pessoa idosa dependente ou pessoa com deficiência que necessite de representação ou assistência.</p>
+
+    <p><strong>RESPONSÁVEL LEGAL:</strong></p>
+    <div class="bloco-dados">
+      <div class="linha">Nome completo: <span class="l" style="width:75%"></span></div>
+      <div class="linha">Grau de parentesco/vínculo: <span class="l l2"></span></div>
+      <div class="linha">RG nº <span class="l l1"></span> &nbsp; CPF nº <span class="l l1"></span> &nbsp; Telefone: <span class="l l1"></span></div>
+      <div class="linha">Endereço: <span class="l" style="width:75%"></span></div>
+    </div>
+
+    <p>As partes acima qualificadas têm entre si justo e contratado o presente
+    <strong>Contrato de Prestação de Serviços Psicológicos</strong>, que se regerá pelas cláusulas
+    e condições a seguir, em conformidade com a Lei nº 4.119/1962, a Lei nº 5.766/1971, o Código de
+    Ética Profissional do Psicólogo (Resolução CFP nº 010/2005), as demais resoluções do Conselho
+    Federal de Psicologia, o Código Civil, o Código de Defesa do Consumidor (Lei nº 8.078/1990) e a
+    Lei Geral de Proteção de Dados (Lei nº 13.709/2018).</p>
+  </section>
+
+  <section>
+    <h2>Cláusula 1ª — Do objeto</h2>
+    <p><strong>1.1.</strong> O presente contrato tem por objeto a prestação de serviços de
+    <span class="cx">☐</span> psicoterapia individual &nbsp;<span class="cx">☐</span> psicoterapia de casal
+    &nbsp;<span class="cx">☐</span> psicoterapia infantil/adolescente &nbsp;<span class="cx">☐</span> avaliação psicológica
+    &nbsp;<span class="cx">☐</span> orientação/aconselhamento psicológico &nbsp;<span class="cx">☐</span> outro:
+    <span class="l l2"></span>, prestados pessoalmente pelo CONTRATADO ao CONTRATANTE.</p>
+
+    <p><strong>1.2.</strong> A abordagem teórica adotada pelo CONTRATADO é
+    <span class="l l3"></span>, tendo o CONTRATANTE sido previamente esclarecido sobre seus
+    fundamentos, alcance e limites.</p>
+
+    <p><strong>1.3.</strong> Os serviços psicológicos configuram <strong>obrigação de meio, e não de
+    resultado</strong>. O CONTRATADO compromete-se a empregar todo o seu conhecimento técnico,
+    diligência e zelo profissional, não podendo garantir resultado terapêutico específico, cura ou
+    prazo determinado para a solução da demanda apresentada.</p>
+
+    <p><strong>1.4.</strong> O atendimento psicológico <strong>não substitui</strong> acompanhamento
+    médico, psiquiátrico ou de outras especialidades da saúde, podendo o CONTRATADO indicar, quando
+    entender necessário, avaliação ou tratamento complementar.</p>
+  </section>
+
+  <section>
+    <h2>Cláusula 2ª — Da modalidade, local e duração das sessões</h2>
+    <p><strong>2.1.</strong> Os atendimentos serão realizados na modalidade:</p>
+    <p class="recuo"><span class="cx">☐</span> <strong>Presencial</strong>, no endereço do consultório indicado no preâmbulo;<br>
+    <span class="cx">☐</span> <strong>On-line</strong> (mediado por tecnologia da informação e da comunicação), por meio da
+    plataforma <span class="l l2"></span>, nos termos da Resolução CFP nº 11/2018;<br>
+    <span class="cx">☐</span> <strong>Híbrida</strong>, alternando as modalidades acima conforme acordo prévio entre as partes.</p>
+
+    <p><strong>2.2.</strong> Cada sessão terá duração de <span class="l" style="width:18mm"></span> minutos
+    (habitualmente 50 minutos), contados do horário agendado, ainda que o CONTRATANTE chegue com atraso.</p>
+
+    <p><strong>2.3.</strong> A frequência dos atendimentos será de <span class="l" style="width:14mm"></span>
+    sessão(ões) por <span class="cx">☐</span> semana &nbsp;<span class="cx">☐</span> quinzena &nbsp;<span class="cx">☐</span> mês,
+    preferencialmente em dia e horário fixos: dia(s) <span class="l l2"></span> &nbsp; horário
+    <span class="l" style="width:24mm"></span>.</p>
+
+    <p><strong>2.4.</strong> O horário reservado é de uso exclusivo do CONTRATANTE, permanecendo
+    indisponível para terceiros durante a vigência deste contrato.</p>
+  </section>
+
+  <section>
+    <h2>Cláusula 3ª — Dos honorários e da forma de pagamento</h2>
+    <p><strong>3.1.</strong> O CONTRATANTE pagará ao CONTRATADO o valor de
+    <strong>R$ <span class="l l1"></span></strong> (<span class="l l3"></span>) por sessão.</p>
+
+    <p><strong>3.2.</strong> O pagamento será efetuado:</p>
+    <p class="recuo"><span class="cx">☐</span> por sessão, ao final de cada atendimento;<br>
+    <span class="cx">☐</span> mensalmente, até o dia <span class="l" style="width:14mm"></span> de cada mês, referente às sessões
+    <span class="cx">☐</span> realizadas no mês anterior &nbsp;<span class="cx">☐</span> agendadas para o mês corrente;<br>
+    <span class="cx">☐</span> outra forma: <span class="l l3"></span>.</p>
+
+    <p><strong>3.3.</strong> Meio de pagamento aceito: <span class="cx">☐</span> PIX — chave
+    <span class="l l2"></span> &nbsp;<span class="cx">☐</span> transferência bancária &nbsp;<span class="cx">☐</span> cartão
+    &nbsp;<span class="cx">☐</span> dinheiro &nbsp;<span class="cx">☐</span> outro: <span class="l l1"></span>.</p>
+
+    <p><strong>3.4.</strong> O atraso no pagamento acarretará multa de <span class="l" style="width:14mm"></span>%
+    sobre o valor em aberto, juros de mora de <span class="l" style="width:14mm"></span>% ao mês e correção
+    monetária pelo <span class="l l1"></span>, sem prejuízo da suspensão dos atendimentos enquanto perdurar a
+    inadimplência, observado o dever ético de não abandono do paciente e a prévia comunicação com
+    antecedência mínima de <span class="l" style="width:14mm"></span> dias.</p>
+
+    <p><strong>3.5.</strong> Os honorários serão reajustados a cada <strong>12 (doze) meses</strong>, ou em
+    periodicidade menor mediante acordo expresso entre as partes, sendo o novo valor comunicado ao
+    CONTRATANTE com antecedência mínima de <strong>30 (trinta) dias</strong>.</p>
+
+    <p><strong>3.6.</strong> O CONTRATADO fornecerá recibo de pagamento de autônomo (RPA) ou nota fiscal
+    de serviço sempre que solicitado, para fins de declaração de imposto de renda ou de reembolso junto
+    a plano de saúde.</p>
+
+    <p><strong>3.7.</strong> Os honorários remuneram exclusivamente as sessões contratadas. Serviços
+    adicionais — tais como elaboração de documentos psicológicos, relatórios, laudos, pareceres,
+    atendimentos de emergência fora do horário contratado, participação em reuniões escolares,
+    audiências ou perícias — serão orçados e cobrados à parte, mediante acordo prévio.</p>
+  </section>
+
+  <section>
+    <h2>Cláusula 4ª — Das faltas, atrasos e cancelamentos</h2>
+    <p><strong>4.1.</strong> O cancelamento ou a remarcação de sessão deverá ser comunicado pelo
+    CONTRATANTE com antecedência mínima de <span class="l" style="width:16mm"></span> horas
+    (habitualmente 24 horas).</p>
+
+    <p><strong>4.2.</strong> A falta não comunicada nesse prazo, ou a ausência sem justificativa,
+    <span class="cx">☐</span> será cobrada integralmente &nbsp;<span class="cx">☐</span> será cobrada em
+    <span class="l" style="width:14mm"></span>% &nbsp;<span class="cx">☐</span> não será cobrada, uma vez que o
+    horário permaneceu reservado.</p>
+
+    <p><strong>4.3.</strong> Havendo comunicação no prazo, a sessão poderá ser reagendada dentro do mesmo
+    mês, conforme disponibilidade de agenda de ambas as partes.</p>
+
+    <p><strong>4.4.</strong> O atraso do CONTRATANTE não prorroga o término da sessão, sendo devido o valor
+    integral. Atrasos superiores a <span class="l" style="width:16mm"></span> minutos poderão implicar o
+    cancelamento do atendimento, a critério do CONTRATADO.</p>
+
+    <p><strong>4.5.</strong> Caso o CONTRATADO precise cancelar uma sessão, comunicará o CONTRATANTE com a
+    maior antecedência possível e oferecerá reposição em data e horário convenientes a ambos, sem custo
+    adicional.</p>
+
+    <p><strong>4.6.</strong> Faltas injustificadas e consecutivas em número igual ou superior a
+    <span class="l" style="width:14mm"></span> sessões, sem qualquer comunicação, poderão ser interpretadas
+    como interrupção do tratamento, aplicando-se o disposto na Cláusula 10ª.</p>
+  </section>
+
+  <section>
+    <h2>Cláusula 5ª — Do sigilo profissional</h2>
+    <p><strong>5.1.</strong> O CONTRATADO obriga-se a manter <strong>sigilo absoluto</strong> sobre todos os
+    fatos, informações e conteúdos conhecidos em razão do atendimento, nos termos dos artigos 9º a 13 do
+    Código de Ética Profissional do Psicólogo e do artigo 154 do Código Penal.</p>
+
+    <p><strong>5.2.</strong> O sigilo permanece mesmo após o término deste contrato, do tratamento ou do
+    falecimento do CONTRATANTE.</p>
+
+    <p><strong>5.3.</strong> O sigilo poderá ser excepcionalmente rompido, restringindo-se ao mínimo
+    necessário, nas seguintes hipóteses:</p>
+    <ol class="alineas" type="a">
+      <li>risco atual ou iminente de morte ou de lesão grave ao próprio CONTRATANTE (ideação ou
+      planejamento suicida, automutilação grave);</li>
+      <li>risco atual ou iminente à vida ou à integridade de terceiros;</li>
+      <li>suspeita ou confirmação de violência, abuso, negligência ou exploração contra criança,
+      adolescente, pessoa idosa ou pessoa com deficiência, cuja comunicação às autoridades competentes é
+      obrigatória por lei (Lei nº 8.069/1990 e Lei nº 10.741/2003);</li>
+      <li>determinação judicial expressa e fundamentada;</li>
+      <li>autorização prévia, escrita e específica do próprio CONTRATANTE.</li>
+    </ol>
+
+    <p><strong>5.4.</strong> Sempre que possível, o CONTRATADO informará previamente o CONTRATANTE sobre a
+    necessidade de quebra do sigilo, seus motivos e sua extensão.</p>
+
+    <p><strong>5.5.</strong> Nos atendimentos de crianças e adolescentes, o conteúdo das sessões é protegido
+    por sigilo perante os responsáveis legais, os quais receberão orientações e informações gerais sobre o
+    processo terapêutico, <strong>sem detalhamento do conteúdo das sessões</strong>, ressalvadas as hipóteses
+    da cláusula 5.3.</p>
+  </section>
+
+  <section>
+    <h2>Cláusula 6ª — Dos registros e da proteção de dados (LGPD)</h2>
+    <p><strong>6.1.</strong> O CONTRATADO manterá registro documental dos atendimentos (prontuário
+    psicológico), conforme a Resolução CFP nº 001/2009, guardando-o em local seguro, de acesso restrito,
+    pelo prazo mínimo de <strong>5 (cinco) anos</strong>.</p>
+
+    <p><strong>6.2.</strong> Os dados pessoais e os dados pessoais sensíveis de saúde do CONTRATANTE serão
+    tratados exclusivamente para a finalidade da prestação dos serviços contratados e para o cumprimento de
+    obrigações legais e regulatórias, nos termos dos artigos 7º, 11 e seguintes da Lei nº 13.709/2018 (LGPD).</p>
+
+    <p><strong>6.3.</strong> É <strong>vedada</strong> a gravação em áudio ou vídeo das sessões por qualquer
+    das partes, salvo mediante autorização expressa e por escrito de ambas, com indicação da finalidade, da
+    forma de armazenamento e do prazo de descarte.</p>
+
+    <p><strong>6.4.</strong> O CONTRATANTE poderá, a qualquer tempo, solicitar informações sobre o tratamento
+    de seus dados, sua correção ou sua eliminação, ressalvadas as hipóteses de guarda obrigatória por
+    determinação legal ou do Conselho Federal de Psicologia.</p>
+
+    <p><strong>6.5.</strong> Nos atendimentos on-line, o CONTRATADO utilizará plataforma com criptografia e
+    recursos de segurança adequados, cabendo ao CONTRATANTE zelar pela privacidade do ambiente de onde
+    participa.</p>
+  </section>
+
+  <section>
+    <h2>Cláusula 7ª — Das obrigações do contratado</h2>
+    <ol class="alineas" type="a">
+      <li>prestar os serviços com zelo, diligência, técnica e respeito à dignidade do CONTRATANTE, sem
+      qualquer forma de discriminação;</li>
+      <li>cumprir rigorosamente o Código de Ética Profissional do Psicólogo e as resoluções do Conselho
+      Federal de Psicologia;</li>
+      <li>manter atualizado e regular seu registro profissional junto ao CRP;</li>
+      <li>cumprir os horários agendados e comunicar com antecedência eventuais alterações;</li>
+      <li>prestar esclarecimentos sobre o processo terapêutico sempre que solicitado;</li>
+      <li>manter sigilo, nos termos da Cláusula 5ª;</li>
+      <li>encaminhar o CONTRATANTE a outro profissional ou serviço sempre que a demanda extrapolar sua área
+      de atuação ou competência técnica;</li>
+      <li>fornecer os documentos psicológicos pertinentes, nos termos da Resolução CFP nº 06/2019, mediante
+      solicitação e quando tecnicamente cabível.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Cláusula 8ª — Das obrigações do contratante</h2>
+    <ol class="alineas" type="a">
+      <li>comparecer aos atendimentos nos dias e horários acordados;</li>
+      <li>efetuar o pagamento dos honorários na forma e nos prazos pactuados;</li>
+      <li>prestar informações verdadeiras e completas, inclusive sobre uso de medicamentos, tratamentos em
+      curso e acompanhamento com outros profissionais de saúde;</li>
+      <li>comunicar previamente faltas, atrasos e a intenção de interromper o tratamento;</li>
+      <li>manter atualizados seus dados de contato;</li>
+      <li>nos atendimentos on-line, dispor de conexão estável, equipamento adequado e ambiente reservado,
+      silencioso e livre de interrupções, que preserve a privacidade da sessão;</li>
+      <li>não comparecer aos atendimentos sob efeito de álcool ou de substâncias psicoativas que comprometam
+      a condução do trabalho, hipótese em que a sessão poderá ser encerrada e cobrada integralmente;</li>
+      <li>tratar o CONTRATADO com respeito, sendo vedada qualquer conduta agressiva, ameaçadora ou
+      desrespeitosa, sob pena de rescisão imediata deste contrato.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Cláusula 9ª — Do atendimento on-line</h2>
+    <p class="nota">Aplicável somente quando assinalada a modalidade on-line ou híbrida na cláusula 2.1.</p>
+
+    <p><strong>9.1.</strong> O atendimento psicológico mediado por tecnologia observará a Resolução CFP
+    nº 11/2018, estando o CONTRATADO devidamente cadastrado no Cadastro e-Psi, quando exigível.</p>
+
+    <p><strong>9.2.</strong> O CONTRATANTE declara estar ciente de que a modalidade on-line pode sofrer
+    instabilidades técnicas. Havendo queda de conexão, as partes tentarão o restabelecimento; persistindo a
+    falha por mais de <span class="l" style="width:16mm"></span> minutos, a sessão será reagendada, sendo
+    <span class="cx">☐</span> devido &nbsp;<span class="cx">☐</span> não devido o valor da sessão interrompida.</p>
+
+    <p><strong>9.3.</strong> O CONTRATADO poderá, a seu critério técnico, indicar que determinada demanda não
+    é adequada ao atendimento on-line, propondo a migração para a modalidade presencial ou o encaminhamento a
+    serviço apropriado.</p>
+
+    <p><strong>9.4.</strong> O CONTRATANTE informa o endereço físico onde habitualmente participará das
+    sessões on-line, para fins de eventual acionamento de rede de apoio ou de serviço de emergência em
+    situação de risco: <span class="l" style="width:100%"></span></p>
+  </section>
+
+  <section>
+    <h2>Cláusula 10ª — Da vigência, interrupção e rescisão</h2>
+    <p><strong>10.1.</strong> O presente contrato vigora por prazo <span class="cx">☐</span> indeterminado, a
+    partir de <span class="l" style="width:32mm"></span> &nbsp;<span class="cx">☐</span> determinado, de
+    <span class="l" style="width:32mm"></span> a <span class="l" style="width:32mm"></span>, podendo ser
+    prorrogado por acordo entre as partes.</p>
+
+    <p><strong>10.2.</strong> Qualquer das partes poderá rescindir este contrato a qualquer tempo, mediante
+    comunicação prévia de <span class="l" style="width:14mm"></span> dias, preferencialmente por escrito, sem
+    qualquer ônus ou multa, ressalvado o pagamento das sessões já realizadas.</p>
+
+    <p><strong>10.3.</strong> Recomenda-se que o encerramento do processo terapêutico seja precedido de ao
+    menos <span class="l" style="width:14mm"></span> sessão(ões) de encerramento, para adequada elaboração e
+    finalização do trabalho.</p>
+
+    <p><strong>10.4.</strong> O CONTRATADO não abandonará o CONTRATANTE, comprometendo-se, em caso de
+    interrupção por sua iniciativa, a informar os motivos e a realizar o devido encaminhamento a outro
+    profissional ou serviço da rede.</p>
+
+    <p><strong>10.5.</strong> O contrato poderá ser rescindido de imediato, independentemente de aviso prévio,
+    em caso de descumprimento grave de qualquer cláusula, inadimplência superior a
+    <span class="l" style="width:14mm"></span> dias após notificação, ou conduta que inviabilize a relação
+    terapêutica ou configure quebra de respeito mútuo.</p>
+  </section>
+
+  <section>
+    <h2>Cláusula 11ª — Do consentimento informado</h2>
+    <p><strong>11.1.</strong> O CONTRATANTE declara que foi previamente informado, em linguagem clara e
+    acessível, sobre a natureza do trabalho psicológico, seus objetivos, método, duração estimada, riscos,
+    benefícios, alternativas, limites do sigilo e valores, tendo tido oportunidade de esclarecer todas as suas
+    dúvidas antes da assinatura.</p>
+
+    <p><strong>11.2.</strong> O CONTRATANTE declara que sua participação é <strong>voluntária</strong> e que
+    pode interromper o atendimento a qualquer momento, observado o disposto na Cláusula 10ª.</p>
+
+    <p><strong>11.3.</strong> Sendo o paciente menor de idade ou pessoa que necessite de representação, o
+    responsável legal identificado no preâmbulo assina este instrumento autorizando expressamente o
+    atendimento psicológico.</p>
+  </section>
+
+  <section>
+    <h2>Cláusula 12ª — Das disposições gerais</h2>
+    <p><strong>12.1.</strong> Qualquer alteração deste contrato somente terá validade se feita por escrito e
+    assinada por ambas as partes, mediante termo aditivo.</p>
+    <p><strong>12.2.</strong> A tolerância de qualquer das partes quanto ao descumprimento de cláusula deste
+    contrato constitui mera liberalidade, não configurando novação nem renúncia de direito.</p>
+    <p><strong>12.3.</strong> A nulidade de qualquer cláusula não invalidará as demais, que permanecerão em
+    pleno vigor.</p>
+    <p><strong>12.4.</strong> Este contrato obriga as partes, seus herdeiros e sucessores.</p>
+    <p><strong>12.5.</strong> As partes elegem o <strong>Foro da Comarca de Belo Jardim/PE</strong> para
+    dirimir quaisquer dúvidas ou controvérsias oriundas deste contrato, com renúncia a qualquer outro, por
+    mais privilegiado que seja, sem prejuízo da tentativa prévia de solução consensual.</p>
+  </section>
+
+  <div class="assinaturas">
+    <p>E, por estarem justas e contratadas, as partes assinam o presente instrumento em
+    <strong>02 (duas) vias de igual teor e forma</strong>, na presença das testemunhas abaixo.</p>
+
+    <p style="margin-top:18px"><span class="l l2"></span>, <span class="l" style="width:14mm"></span> de
+    <span class="l l1"></span> de <span class="l" style="width:22mm"></span>.</p>
+
+    <div class="firma">
+      <div class="rule"></div>
+      <div class="nome">JARDEL EMERSON DA SILVA LINS</div>
+      <div class="cargo">Psicólogo — CRP 02/32710 — Contratado</div>
+    </div>
+
+    <div class="firma">
+      <div class="rule"></div>
+      <div class="cargo">Contratante (paciente)</div>
+      <div class="campo">Nome: <span class="l l2"></span> &nbsp; CPF: <span class="l l1"></span></div>
+    </div>
+
+    <div class="firma">
+      <div class="rule"></div>
+      <div class="cargo">Responsável legal (quando aplicável)</div>
+      <div class="campo">Nome: <span class="l l2"></span> &nbsp; CPF: <span class="l l1"></span></div>
+    </div>
+
+    <div class="testemunhas">
+      <p><strong>TESTEMUNHAS</strong></p>
+      <p>1) <span class="l" style="width:55%"></span> &nbsp; CPF: <span class="l l1"></span></p>
+      <p>2) <span class="l" style="width:55%"></span> &nbsp; CPF: <span class="l l1"></span></p>
+    </div>
+  </div>
+
+  <div class="rodape-pagina">
+    Rubrica do contratado: __________ &nbsp;&nbsp; Rubrica do contratante: __________ &nbsp;&nbsp;
+    Rubrica do responsável legal: __________
+  </div>
+
+</div>
+</body>
+</html>
